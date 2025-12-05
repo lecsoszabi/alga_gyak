@@ -35,10 +35,7 @@ def elevators_intersect(x1, y1, x2, y2, F):
     # ha a két számtani sorozat kongruenciái eleve összeegyeztethetetlenek, nincs közös emelet
     if diff % g != 0:
         return False
-
-    # itt már tudjuk, hogy matematikailag van végtelen sok közös megálló (valahol az egész számegyenesen)
-    # most azt kell megnézni, van-e közös emelet a [0, F-1] tartományban és legalább max(y1,y2) felett
-
+        
     # megoldjuk: y1 + x1 * t ≡ y2 (mod x2)
     x1p = x1 // g
     x2p = x2 // g
@@ -77,7 +74,7 @@ def elevator_serves_floor(x, y, floor):
     return (floor - y) % x == 0
 
 
-# itt olvasom be az összes számot a bemenetből
+# itt beolvasom az összes számot a bemenetből
 data = sys.stdin.read().strip().split()
 if not data:
     sys.exit(0)
